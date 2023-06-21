@@ -1,6 +1,6 @@
 ---
 # tasks file for tests/integration/targets/test_enable_cloudtrail_encryption_with_kms
-
+# just a test
 - name: Set 'test_resource_prefix' variable
   ansible.builtin.set_fact:
     test_resource_prefix: ansible-cloudtrail-{{ 101 | random(1, 10) }}
