@@ -10,16 +10,16 @@
       region: "{{ aws_region | default('us-east-1') }}"
 
   tasks:
-    - name: Import 'cloud.aws_ops.clone_on_prem_vm' role
-      ansible.builtin.import_role:
-        name: cloud.aws_ops.clone_on_prem_vm
-      vars:
-        clone_on_prem_vm_source_vm_name: "{{ clone_on_prem_vm_source_vm_name }}"
-        clone_on_prem_vm_image_name: "{{ clone_on_prem_vm_image_name }}"
-        clone_on_prem_vm_uri: "{{ clone_on_prem_vm_uri }}"
-        clone_on_prem_vm_local_image_path: "{{ clone_on_prem_vm_local_image_path }}"
-        clone_on_prem_vm_overwrite: "{{ clone_on_prem_vm_overwrite }}"
-      delegate_to: kvm
+    #- name: Import 'cloud.aws_ops.clone_on_prem_vm' role
+    #  ansible.builtin.import_role:
+    #    name: cloud.aws_ops.clone_on_prem_vm
+    #  vars:
+    #    clone_on_prem_vm_source_vm_name: "{{ clone_on_prem_vm_source_vm_name }}"
+    #    clone_on_prem_vm_image_name: "{{ clone_on_prem_vm_image_name }}"
+    #    clone_on_prem_vm_uri: "{{ clone_on_prem_vm_uri }}"
+    #    clone_on_prem_vm_local_image_path: "{{ clone_on_prem_vm_local_image_path }}"
+    #    clone_on_prem_vm_overwrite: "{{ clone_on_prem_vm_overwrite }}"
+    #  delegate_to: kvm
 
     - name: Import 'cloud.aws_ops.import_image_and_run_aws_instance' role
       ansible.builtin.import_role:
