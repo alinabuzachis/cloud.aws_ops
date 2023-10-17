@@ -128,14 +128,12 @@
   delegate_to: localhost
 
 - name: Fetch the converted RAW image to localhost
-  ansible.builtin.synchronize:
+  ansible.builtin.fetch:
     src: "{{ clone_on_prem_vm__raw_image_path }}"
     dest: "{{ clone_on_prem_vm__dir_localhost.path }}"
     #flat: yes
     #fail_on_missing: yes
-    #validate_checksum: true
-    mode: pull
-  delegate_to: localhost
+    validate_checksum: true
   register: clone_on_prem_vm_fetch_to_localhost
 
 - name: Set 'clone_on_prem_vm_local_image_path'
