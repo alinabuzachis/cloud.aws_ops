@@ -134,6 +134,7 @@
     #flat: yes
     #fail_on_missing: yes
     #validate_checksum: true
+    mode: pull
   delegate_to: localhost
   register: clone_on_prem_vm_fetch_to_localhost
 
