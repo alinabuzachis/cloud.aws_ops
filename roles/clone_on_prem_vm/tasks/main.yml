@@ -131,7 +131,7 @@
   ansible.builtin.fetch:
     src: "{{ clone_on_prem_vm__raw_image_path }}"
     dest: "{{ clone_on_prem_vm__dir_localhost.path }}"
-    #flat: yes
+    flat: yes
     #fail_on_missing: yes
     validate_checksum: true
   register: clone_on_prem_vm_fetch_to_localhost
