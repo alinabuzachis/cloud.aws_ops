@@ -50,12 +50,12 @@
       ansible.builtin.set_fact:
         import_image_and_run_aws_instance__s3_object_key: "{{ import_image_and_run_aws_instance_bucket_name }}/{{ import_image_and_run_aws_instance_instance_name }}.raw"
 
-    # - name: Upload raw image to S3 bucket
-    #  amazon.aws.s3_object:
-    #    bucket: "{{ import_image_and_run_aws_instance_bucket_name }}"
-    #    object: "{{ import_image_and_run_aws_instance__s3_object_key }}"
-    #    src: "{{ import_image_and_run_aws_instance_image_path }}"
-    #    mode: put
+    - name: Upload raw image to S3 bucket
+      amazon.aws.s3_object:
+        bucket: "{{ import_image_and_run_aws_instance_bucket_name }}"
+        object: "{{ import_image_and_run_aws_instance__s3_object_key }}"
+        src: "{{ import_image_and_run_aws_instance_image_path }}"
+        mode: put
 
     - name: Import image
       amazon.aws.ec2_import_image:
